@@ -81,6 +81,3 @@ let hole = sprites.create(img`
     `, SpriteKind.Hole)
 hole.setPosition(960, 105)
 scene.cameraFollowSprite(golfball.sprite)
-if (null.overlapsWith(hole)) {
-    game.showLongText("You win", DialogLayout.Full)
-}
