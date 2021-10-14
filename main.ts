@@ -5,6 +5,9 @@ namespace SpriteKind {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     golfball.throwDart()
 })
+function WIN () {
+	
+}
 scene.onHitTile(SpriteKind.GolfBall, 14, function (sprite) {
     golfball.stopDart()
 })
@@ -78,3 +81,6 @@ let hole = sprites.create(img`
     `, SpriteKind.Hole)
 hole.setPosition(960, 105)
 scene.cameraFollowSprite(golfball.sprite)
+if (null.overlapsWith(hole)) {
+    game.showLongText("You win", DialogLayout.Full)
+}
