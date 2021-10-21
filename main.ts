@@ -5,9 +5,9 @@ namespace SpriteKind {
 }
 function StartLevel () {
     if (current_level == 0) {
-        tiles.setTilemap(tilemap`level8`)
-    } else if (current_level == 1) {
         tiles.setTilemap(tilemap`level9`)
+    } else if (current_level == 1) {
+        tiles.setTilemap(tilemap`level8`)
     } else if (current_level == 2) {
         tiles.setTilemap(tilemap`level10`)
     } else {
