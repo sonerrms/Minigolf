@@ -17,6 +17,7 @@ function StartLevel () {
     golfball.controlWithArrowKeys()
     scene.cameraFollowSprite(golfball.sprite)
     tiles.placeOnRandomTile(golfball.sprite, assets.tile`myTile0`)
+    info.setLife(3)
     for (let value of tiles.getTilesByType(assets.tile`myTile0`)) {
         tiles.setTileAt(value, assets.tile`transparency16`)
     }
@@ -102,6 +103,10 @@ scene.onOverlapTile(SpriteKind.GolfBall, assets.tile`myTile`, function (sprite, 
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     golfball.throwDart()
+})
+sprites.onOverlap(SpriteKind.GolfBall, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    otherSprite.destroy()
 })
 scene.onOverlapTile(SpriteKind.GolfBall, sprites.swamp.swampTile13, function (sprite, location) {
     game.over(false, effects.splatter)
