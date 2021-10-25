@@ -241,7 +241,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     golfball.throwDart()
 })
 sprites.onOverlap(SpriteKind.GolfBall, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over(false)
+    info.changeLifeBy(-1)
     otherSprite.destroy()
 })
 scene.onOverlapTile(SpriteKind.GolfBall, sprites.swamp.swampTile13, function (sprite, location) {
